@@ -1,0 +1,33 @@
+# Created by https://www.gitignore.io/api/video,jupyternotebooks
+# Edit at https://www.gitignore.io/?templates=video,jupyternotebooks
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
+
+### Video ###
+*.3g2
+*.3gp
+*.asf
+*.asx
+*.avi
+*.flv
+*.mov
+*.mp4
+*.mpg
+*.rm
+*.swf
+*.vob
+*.wmv
+
+# End of https://www.gitignore.io/api/video,jupyternotebooks

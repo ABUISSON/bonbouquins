@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+BonBouquins
+{% endblock %}
+
+{% block body %}
+<h1>Trouver votre prochain livre coup de coeur</h1>
+
+<form action="{{ url_for('search') }}" method="post">
+  <div class="input-group mb-3">
+    <input type="text" name="search" class="form-control" placeholder="Chercher un titre/auteur/isbn" aria-label="Chercher un titre/auteur/isbn" aria-describedby="basic-addon2" >
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">Rechercher</button>
+    </div>
+  </div>
+</form>
+
+<div class="row row-flex">
+  {% if not_found == True %}
+  <h3 class="not-found-title">Désolé, aucun livre ne correspond à votre recherche !</h3>
+  <div class="row">
+    <img class="not-found" src="/static/img/searching.svg" alt="" width=40%>
+  </div>
+  {% endif %}
+  {% for book in book_list %}
+  <div class="col-md-3  mt-3">
+    <div class="card h-100" style="min-width: 14rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{ book['title']}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ book['author']}}</h6>
+        <a href="{{ '/books/%s'%book['id'] }}" class="card-link"> Voir les commentaires</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

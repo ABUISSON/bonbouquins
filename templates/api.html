@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    API
+{% endblock %}
+
+{% block body %}
+    <h1>BonBouquins pour les développeurs</h1>
+
+<p>Pour accéder à notre API, envoyez une requette sur l'url suivant : <i>https://bonbouquins.com/api/[ISBN]</i> avec <i>[ISBN]</i> l'ISBN du livre de votre choix.</p>
+
+<p> L'API retourne un fichier de json de la forme suivante :
+<ul>
+  <li><b>author</b> : l'auteur du livre</li>
+  <li><b>title</b> : le titre du livre</li>
+  <li><b>year</b> : l'année de publication du livre</li>
+  <li><b>ISBN</b> : l'ISBN du livre</li>
+  <li><b>review_count</b> : le nombre d'évaluations sur notre site</li>
+  <li><b>average_score</b> : la note moyenne sur notre site (sur 5)</li>
+
+</ul></p>
+
+{% endblock %}
